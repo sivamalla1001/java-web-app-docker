@@ -1,3 +1,4 @@
-FROM tomcat:latest
-# Dummy text to test 
-COPY target/java-web-app*.war /usr/local/tomcat/webapps/java-web-app.war
+FROM openjdk
+COPY target/*.jar /
+EXPOSE 8080
+ENTRYPOINT ["java","-jar","/my-app-1.0-SNAPSHOT.jar"]
